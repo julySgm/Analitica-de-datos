@@ -1,0 +1,32 @@
+###############################################################
+#                UNIVERSIDAD SERGIO ARBOLEDA                  #
+#    PROGRAMA DE INGENIERÍA DE SISTEMAS Y TELECOMUNICACIONES  #
+#                   JULIETH GOMEZ MONTES                      #
+#             JULIETH.GOMEZ@CORREO.USA.EDU.CO                 #
+#                       19/03/21                              #
+#           TALLER: Fundamentos del lenguaje R                #
+###############################################################
+
+#Se cargan los datos desde el enlace
+urlLung <- "https://raw.githubusercontent.com/JhonBS17/filesAnaliticaDatos/master/LungCapDataTabla1.csv"
+LungCapData = read.table(file = urlLung, header = T, sep= ",")
+
+#Se requiere observar el dataframe
+View(LungCapData)
+
+#Se requiere cargar los datos de las columnas del dataframe
+#como variables independientes
+attach(LungCapData)
+
+#Si se desea limpiar la consola, se emplea la comanda 'CTR + L'
+
+#Si se requiere observar las variables actuales cargadas en el entorno
+ls()
+
+#Se requiere un breve 'resumen' estadistico del dataframe
+summary(LungCapData)
+
+#Se requiere un t-tes: me permite comparar dos variables (LungCap ~ Smoke)
+t.test(LungCap ~ Smoke)
+
+
